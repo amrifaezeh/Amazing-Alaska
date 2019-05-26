@@ -1,0 +1,41 @@
+**********
+ANIMATED SCROLL
+**********
+copy to head
+<script src="http://ajax.google.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+
+copy after footer
+<script type="text/javascript">
+        $(document).ready(function(){
+                $('a[herf^="#"]').on('click',function (e) {e.preventDefault();
+
+                var target = this.hash;
+                var $target = $(target);
+
+                $('html, body').stop().animate({
+                'scrollTap':$target.offset().top
+                }, 900, 'swing', function () {
+                window.location.hash = target;
+                });
+               });
+});
+</script>
+
+
+XHTML
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('a[href^="#"]').on('click', function(e) {
+      e.preventDefault();
+
+      var target = this.hash;
+      var $target = $(target);
+
+      $('html, body').stop().animate({
+        'scrollTop': $target.offset().top - 100
+      }, 900, 'swing', function() {
+        window.location.hash = target - 100;
+      });
+    });
+  });
+</script>

@@ -10,9 +10,27 @@
     <link href="https://fonts.googleapis.com/css?family=Oswald|Raleway" rel="stylesheet">
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <link rel="stylesheet" href="styles.css">
+    <script src="http://ajax.google.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
 </head>
 
 <body id="top">
+    <header>
+        <h2><a href="#" target="_blank"><img src="img/recycling.png" alt=""></a></h2>
+        <nav>
+            <ul>
+            <li><a href="#top">Top</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#getting-around">Travel</a></li>
+            <li><a href="#famous-quotes">Quotes</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#social-media">Links</a></li>
+        </ul>
+        </nav>
+    </header>
+
+
+    <!-- ***********-->
     <div id="hero">
         <div class="background-image"></div>
         <h1>Beautiful Alaska Photo Portfilo</h1>
@@ -106,6 +124,22 @@
             Franklin
         </p>
     </footer>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('a[href^="#"]').on('click', function(e) {
+          e.preventDefault();
+     
+          var target = this.hash;
+          var $target = $(target);
+     
+          $('html, body').stop().animate({
+            'scrollTop': $target.offset().top - 100
+          }, 900, 'swing', function() {
+            window.location.hash = target - 100;
+          });
+        });
+      });
+    </script>
 </body>
 
 </html>
